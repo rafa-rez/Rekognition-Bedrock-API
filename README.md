@@ -379,4 +379,4 @@ Exemplos e docs de referência:
    - Dificuldades conhecidas;
    - Como utilizar o sistema;
    - 🔨 código fonte desenvolvido (observar estruturas de pastas);
-- O prazo de entrega é até às 14h do dia 19/08/2024 no repositório do github (https://github.com/Compass-pb-aws-2024-ABRIL/sprint-8-pb-aws-abril).
+- O prazo de entrega é até às 14h do dia 05/08/2024 no repositório do github (https://github.com/Compass-pb-aws-2024-ABRIL/sprint-8-pb-aws-abril).
