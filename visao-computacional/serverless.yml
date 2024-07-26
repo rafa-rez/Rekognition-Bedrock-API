@@ -24,3 +24,10 @@ functions:
       - httpApi:
           path: /v2
           method: get
+  analyze_image:
+    handler: handler.analyze_image
+    role: arn:aws:iam::767398027208:role/api-tts-dev-us-east-1-lambdaRole
+    events:
+      - httpApi:
+          path: /v1/vision
+          method: post
