@@ -4,6 +4,15 @@ frameworkVersion: '4.1.16'
 provider:
   name: aws
   runtime: python3.9
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "rekognition:DetectFaces"
+        - "rekognition:DetectLabels"
+        - "logs:*"
+        - "s3:GetObject"
+      Resource: "*"
 
 functions:
   health:
@@ -24,10 +33,15 @@ functions:
       - httpApi:
           path: /v2
           method: get
-  analyze_image:
-    handler: handler.analyze_image
-    role: arn:aws:iam::767398027208:role/api-tts-dev-us-east-1-lambdaRole
+  analyze_image_v1:
+    handler: handler.analyze_image_v1
     events:
       - httpApi:
           path: /v1/vision
+          method: post
+  analyze_image_v2:
+    handler: handler.analyze_image_v2
+    events:
+      - httpApi:
+          path: /v2/vision
           method: post

@@ -89,10 +89,16 @@
         "LogGroupName": "/aws/lambda/vision-dev-v2Description"
       }
     },
-    "AnalyzeUnderscoreimageLogGroup": {
+    "AnalyzeUnderscoreimageUnderscorev1LogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/vision-dev-analyze_image"
+        "LogGroupName": "/aws/lambda/vision-dev-analyze_image_v1"
+      }
+    },
+    "AnalyzeUnderscoreimageUnderscorev2LogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/vision-dev-analyze_image_v2"
       }
     },
     "IamRoleLambdaExecution": {
@@ -152,6 +158,16 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/vision-dev*:*:*"
                     }
                   ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "rekognition:DetectFaces",
+                    "rekognition:DetectLabels",
+                    "logs:*",
+                    "s3:GetObject"
+                  ],
+                  "Resource": "*"
                 }
               ]
             }
@@ -180,7 +196,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722014603171-2024-07-26T17:23:23.171Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
         },
         "Handler": "handler.health",
         "Runtime": "python3.9",
@@ -205,7 +221,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722014603171-2024-07-26T17:23:23.171Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
         },
         "Handler": "handler.v1_description",
         "Runtime": "python3.9",
@@ -230,7 +246,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722014603171-2024-07-26T17:23:23.171Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
         },
         "Handler": "handler.v2_description",
         "Runtime": "python3.9",
@@ -248,64 +264,104 @@
         "V2DescriptionLogGroup"
       ]
     },
-    "AnalyzeUnderscoreimageLambdaFunction": {
+    "AnalyzeUnderscoreimageUnderscorev1LambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722014603171-2024-07-26T17:23:23.171Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
         },
-        "Handler": "handler.analyze_image",
+        "Handler": "handler.analyze_image_v1",
         "Runtime": "python3.9",
-        "FunctionName": "vision-dev-analyze_image",
+        "FunctionName": "vision-dev-analyze_image_v1",
         "MemorySize": 1024,
         "Timeout": 6,
-        "Role": "arn:aws:iam::767398027208:role/api-tts-dev-us-east-1-lambdaRole"
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
       },
       "DependsOn": [
-        "AnalyzeUnderscoreimageLogGroup"
+        "AnalyzeUnderscoreimageUnderscorev1LogGroup"
       ]
     },
-    "HealthLambdaVersionPBIJmJueRM3yz0U9c5MYi4Jhq6SWOWg6X6KoPP20o": {
+    "AnalyzeUnderscoreimageUnderscorev2LambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+        },
+        "Handler": "handler.analyze_image_v2",
+        "Runtime": "python3.9",
+        "FunctionName": "vision-dev-analyze_image_v2",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "AnalyzeUnderscoreimageUnderscorev2LogGroup"
+      ]
+    },
+    "HealthLambdaVersionBWhY7HsAKurslv9MMwuQFuoxGcyIiEjXExWofpk9d8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HealthLambdaFunction"
         },
-        "CodeSha256": "se9Op68OR7pNyRyinV+AJrSLbOuycq58aiipqEFoYqE="
+        "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
       }
     },
-    "V1DescriptionLambdaVersionpEBYKtMDivOjD8OoDaPUaAnGvO6Y788SmFlmgPKVZM": {
+    "V1DescriptionLambdaVersionQ2FusjmTCuQl1ZIFQrAY4iQOihtzH38XBgF0jWxkiI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "V1DescriptionLambdaFunction"
         },
-        "CodeSha256": "se9Op68OR7pNyRyinV+AJrSLbOuycq58aiipqEFoYqE="
+        "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
       }
     },
-    "V2DescriptionLambdaVersionapPY5Q91D70b6wV5j8NPBFhsfef7KwLFmnQNU8SwE": {
+    "V2DescriptionLambdaVersionmiAqdcKniYsLke8fBR7tpqIOpU4d0nGkDCUeTaaeX8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "V2DescriptionLambdaFunction"
         },
-        "CodeSha256": "se9Op68OR7pNyRyinV+AJrSLbOuycq58aiipqEFoYqE="
+        "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
       }
     },
-    "AnalyzeUnderscoreimageLambdaVersionB4NI5ZWzCFaG9R0RzvbuJvdvmNKY1Em6iCfhVdJoZ4A": {
+    "AnalyzeUnderscoreimageUnderscorev1LambdaVersion8c6zdT2JyGf5mjOtYsMpRIA2Ye3qdxszbFyMihBJfI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "AnalyzeUnderscoreimageLambdaFunction"
+          "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaFunction"
         },
-        "CodeSha256": "se9Op68OR7pNyRyinV+AJrSLbOuycq58aiipqEFoYqE="
+        "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+      }
+    },
+    "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0zTEYfUpZxlNxQVu9l2M0FAYAtFjpeLRa7hPpdZZwM": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaFunction"
+        },
+        "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
       }
     },
     "HttpApi": {
@@ -553,12 +609,12 @@
       },
       "DependsOn": "HttpApiIntegrationV2Description"
     },
-    "AnalyzeUnderscoreimageLambdaPermissionHttpApi": {
+    "AnalyzeUnderscoreimageUnderscorev1LambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "AnalyzeUnderscoreimageLambdaFunction",
+            "AnalyzeUnderscoreimageUnderscorev1LambdaFunction",
             "Arn"
           ]
         },
@@ -590,7 +646,7 @@
         }
       }
     },
-    "HttpApiIntegrationAnalyzeUnderscoreimage": {
+    "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev1": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -599,7 +655,7 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "AnalyzeUnderscoreimageLambdaFunction",
+            "AnalyzeUnderscoreimageUnderscorev1LambdaFunction",
             "Arn"
           ]
         },
@@ -620,13 +676,88 @@
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationAnalyzeUnderscoreimage"
+                "Ref": "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev1"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationAnalyzeUnderscoreimage"
+      "DependsOn": "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev1"
+    },
+    "AnalyzeUnderscoreimageUnderscorev2LambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "AnalyzeUnderscoreimageUnderscorev2LambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev2": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "AnalyzeUnderscoreimageUnderscorev2LambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostV2Vision": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /v2/vision",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev2"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationAnalyzeUnderscoreimageUnderscorev2"
     }
   },
   "Outputs": {
@@ -641,7 +772,7 @@
     "HealthLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HealthLambdaVersionPBIJmJueRM3yz0U9c5MYi4Jhq6SWOWg6X6KoPP20o"
+        "Ref": "HealthLambdaVersionBWhY7HsAKurslv9MMwuQFuoxGcyIiEjXExWofpk9d8"
       },
       "Export": {
         "Name": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
@@ -650,7 +781,7 @@
     "V1DescriptionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "V1DescriptionLambdaVersionpEBYKtMDivOjD8OoDaPUaAnGvO6Y788SmFlmgPKVZM"
+        "Ref": "V1DescriptionLambdaVersionQ2FusjmTCuQl1ZIFQrAY4iQOihtzH38XBgF0jWxkiI"
       },
       "Export": {
         "Name": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
@@ -659,19 +790,28 @@
     "V2DescriptionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "V2DescriptionLambdaVersionapPY5Q91D70b6wV5j8NPBFhsfef7KwLFmnQNU8SwE"
+        "Ref": "V2DescriptionLambdaVersionmiAqdcKniYsLke8fBR7tpqIOpU4d0nGkDCUeTaaeX8"
       },
       "Export": {
         "Name": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
       }
     },
-    "AnalyzeUnderscoreimageLambdaFunctionQualifiedArn": {
+    "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AnalyzeUnderscoreimageLambdaVersionB4NI5ZWzCFaG9R0RzvbuJvdvmNKY1Em6iCfhVdJoZ4A"
+        "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaVersion8c6zdT2JyGf5mjOtYsMpRIA2Ye3qdxszbFyMihBJfI"
       },
       "Export": {
-        "Name": "sls-vision-dev-AnalyzeUnderscoreimageLambdaFunctionQualifiedArn"
+        "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
+      }
+    },
+    "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0zTEYfUpZxlNxQVu9l2M0FAYAtFjpeLRa7hPpdZZwM"
+      },
+      "Export": {
+        "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
       }
     },
     "HttpApiId": {
