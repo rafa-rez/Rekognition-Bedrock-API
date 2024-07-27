@@ -41,10 +41,27 @@ def analyze_image_v1(event, context):
 
         faces = response['FaceDetails']
         result_faces = [{
-            'position': face['BoundingBox'],
+            'position': {
+                'Height': face['BoundingBox']['Height'],
+                'Left': face['BoundingBox']['Left'],
+                'Top': face['BoundingBox']['Top'],
+                'Width': face['BoundingBox']['Width']
+            },
             'classified_emotion': max(face['Emotions'], key=lambda x: x['Confidence'])['Type'],
             'classified_emotion_confidence': max(face['Emotions'], key=lambda x: x['Confidence'])['Confidence']
         } for face in faces]
+
+        if not result_faces:
+            result_faces = [{
+                'position': {
+                    'Height': None,
+                    'Left': None,
+                    'Top': None,
+                    'Width': None
+                },
+                'classified_emotion': None,
+                'classified_emotion_confidence': None
+            }]
 
         response_body = {
             'url_to_image': url_to_image,
