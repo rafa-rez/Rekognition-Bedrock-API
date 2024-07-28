@@ -138,7 +138,7 @@ def generate_pet_tips(pets):
     pet_names = [label['Name'] for label in pets]
     pet_names_str = ', '.join(pet_names)
     
-    prompt = f"Me de dicas detalhadas sobre os seguinte(s) pets: {pet_names_str}. Inclua as seguintes informações: 1. nível de energia e necessidade de exercícios, 2. Temperamento e comportamento, 3. Cuidados e necessidades, 4. Problemas de Saúde Comuns."
+    prompt = f"Me de dicas detalhadas sobre os seguinte(s) pets: {pet_names_str}.responda em portugues e Inclua as seguintes informações: 1. nível de energia e necessidade de exercícios, 2. Temperamento e comportamento, 3. Cuidados e necessidades, 4. Problemas de Saúde Comuns."
     body = json.dumps({
         "inputText": prompt,
         "textGenerationConfig": {
