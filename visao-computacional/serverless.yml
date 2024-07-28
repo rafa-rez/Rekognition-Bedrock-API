@@ -12,6 +12,7 @@ provider:
         - "rekognition:DetectLabels"
         - "logs:*"
         - "s3:GetObject"
+        - "bedrock:InvokeModel"  
       Resource: "*"
 
 functions:

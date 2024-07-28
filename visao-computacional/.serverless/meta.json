@@ -23,7 +23,8 @@
               "rekognition:DetectFaces",
               "rekognition:DetectLabels",
               "logs:*",
-              "s3:GetObject"
+              "s3:GetObject",
+              "bedrock:InvokeModel"
             ],
             "Resource": "*"
           }
@@ -197,7 +198,8 @@
                             "rekognition:DetectFaces",
                             "rekognition:DetectLabels",
                             "logs:*",
-                            "s3:GetObject"
+                            "s3:GetObject",
+                            "bedrock:InvokeModel"
                           ],
                           "Resource": "*"
                         }
@@ -228,7 +230,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
                 },
                 "Handler": "handler.health",
                 "Runtime": "python3.9",
@@ -253,7 +255,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
                 },
                 "Handler": "handler.v1_description",
                 "Runtime": "python3.9",
@@ -278,7 +280,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
                 },
                 "Handler": "handler.v2_description",
                 "Runtime": "python3.9",
@@ -303,7 +305,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
                 },
                 "Handler": "handler.analyze_image_v1",
                 "Runtime": "python3.9",
@@ -328,7 +330,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722106150998-2024-07-27T18:49:10.998Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
                 },
                 "Handler": "handler.analyze_image_v2",
                 "Runtime": "python3.9",
@@ -346,54 +348,54 @@
                 "AnalyzeUnderscoreimageUnderscorev2LogGroup"
               ]
             },
-            "HealthLambdaVersionBWhY7HsAKurslv9MMwuQFuoxGcyIiEjXExWofpk9d8": {
+            "HealthLambdaVersionoUIxWtiqAz5UKUeEcwOa56lcAzN6IfR2ZxxNQxp4U": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "HealthLambdaFunction"
                 },
-                "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+                "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
               }
             },
-            "V1DescriptionLambdaVersionQ2FusjmTCuQl1ZIFQrAY4iQOihtzH38XBgF0jWxkiI": {
+            "V1DescriptionLambdaVersionlmn8MhJ0qmdLz7fH9ST1vtoiPpKGhgVCcGaM9SwQ": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "V1DescriptionLambdaFunction"
                 },
-                "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+                "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
               }
             },
-            "V2DescriptionLambdaVersionmiAqdcKniYsLke8fBR7tpqIOpU4d0nGkDCUeTaaeX8": {
+            "V2DescriptionLambdaVersionqBZ368lvruCRn3PfoTYPGRvxlu8LDsXo0loVumpmY": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "V2DescriptionLambdaFunction"
                 },
-                "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+                "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
               }
             },
-            "AnalyzeUnderscoreimageUnderscorev1LambdaVersion8c6zdT2JyGf5mjOtYsMpRIA2Ye3qdxszbFyMihBJfI": {
+            "AnalyzeUnderscoreimageUnderscorev1LambdaVersionL9NH1JYqzAlYdMJtLZsIBlwcOzgH22Fv0qr7k9RoI": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaFunction"
                 },
-                "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+                "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
               }
             },
-            "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0zTEYfUpZxlNxQVu9l2M0FAYAtFjpeLRa7hPpdZZwM": {
+            "AnalyzeUnderscoreimageUnderscorev2LambdaVersionNU24pluSxJhpm8LSZgmFquM5PheJP1VfkQLEGlThu8": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaFunction"
                 },
-                "CodeSha256": "t1dtrQrcg1sj5Yyxewy02RhT89IOH3qYqH+moMSC7SQ="
+                "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
               }
             },
             "HttpApi": {
@@ -804,7 +806,7 @@
             "HealthLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "HealthLambdaVersionBWhY7HsAKurslv9MMwuQFuoxGcyIiEjXExWofpk9d8"
+                "Ref": "HealthLambdaVersionoUIxWtiqAz5UKUeEcwOa56lcAzN6IfR2ZxxNQxp4U"
               },
               "Export": {
                 "Name": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
@@ -813,7 +815,7 @@
             "V1DescriptionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "V1DescriptionLambdaVersionQ2FusjmTCuQl1ZIFQrAY4iQOihtzH38XBgF0jWxkiI"
+                "Ref": "V1DescriptionLambdaVersionlmn8MhJ0qmdLz7fH9ST1vtoiPpKGhgVCcGaM9SwQ"
               },
               "Export": {
                 "Name": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
@@ -822,7 +824,7 @@
             "V2DescriptionLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "V2DescriptionLambdaVersionmiAqdcKniYsLke8fBR7tpqIOpU4d0nGkDCUeTaaeX8"
+                "Ref": "V2DescriptionLambdaVersionqBZ368lvruCRn3PfoTYPGRvxlu8LDsXo0loVumpmY"
               },
               "Export": {
                 "Name": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
@@ -831,7 +833,7 @@
             "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaVersion8c6zdT2JyGf5mjOtYsMpRIA2Ye3qdxszbFyMihBJfI"
+                "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaVersionL9NH1JYqzAlYdMJtLZsIBlwcOzgH22Fv0qr7k9RoI"
               },
               "Export": {
                 "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
@@ -840,7 +842,7 @@
             "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0zTEYfUpZxlNxQVu9l2M0FAYAtFjpeLRa7hPpdZZwM"
+                "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersionNU24pluSxJhpm8LSZgmFquM5PheJP1VfkQLEGlThu8"
               },
               "Export": {
                 "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
@@ -985,7 +987,7 @@
           "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "HealthLambdaVersionBWhY7HsAKurslv9MMwuQFuoxGcyIiEjXExWofpk9d8"
+          "versionLogicalId": "HealthLambdaVersionoUIxWtiqAz5UKUeEcwOa56lcAzN6IfR2ZxxNQxp4U"
         },
         "v1Description": {
           "handler": "handler.v1_description",
@@ -1005,7 +1007,7 @@
           "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "V1DescriptionLambdaVersionQ2FusjmTCuQl1ZIFQrAY4iQOihtzH38XBgF0jWxkiI"
+          "versionLogicalId": "V1DescriptionLambdaVersionlmn8MhJ0qmdLz7fH9ST1vtoiPpKGhgVCcGaM9SwQ"
         },
         "v2Description": {
           "handler": "handler.v2_description",
@@ -1025,7 +1027,7 @@
           "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "V2DescriptionLambdaVersionmiAqdcKniYsLke8fBR7tpqIOpU4d0nGkDCUeTaaeX8"
+          "versionLogicalId": "V2DescriptionLambdaVersionqBZ368lvruCRn3PfoTYPGRvxlu8LDsXo0loVumpmY"
         },
         "analyze_image_v1": {
           "handler": "handler.analyze_image_v1",
@@ -1045,7 +1047,7 @@
           "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev1LambdaVersion8c6zdT2JyGf5mjOtYsMpRIA2Ye3qdxszbFyMihBJfI"
+          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev1LambdaVersionL9NH1JYqzAlYdMJtLZsIBlwcOzgH22Fv0qr7k9RoI"
         },
         "analyze_image_v2": {
           "handler": "handler.analyze_image_v2",
@@ -1065,18 +1067,18 @@
           "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0zTEYfUpZxlNxQVu9l2M0FAYAtFjpeLRa7hPpdZZwM"
+          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersionNU24pluSxJhpm8LSZgmFquM5PheJP1VfkQLEGlThu8"
         }
       }
     },
-    "serviceRawFile": "service: vision\r\nframeworkVersion: '4.1.16'\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-east-1\r\n  iamRoleStatements:\r\n    - Effect: \"Allow\"\r\n      Action:\r\n        - \"rekognition:DetectFaces\"\r\n        - \"rekognition:DetectLabels\"\r\n        - \"logs:*\"\r\n        - \"s3:GetObject\"\r\n      Resource: \"*\"\r\n\r\nfunctions:\r\n  health:\r\n    handler: handler.health\r\n    events:\r\n      - httpApi:\r\n          path: /\r\n          method: get\r\n  v1Description:\r\n    handler: handler.v1_description\r\n    events:\r\n      - httpApi:\r\n          path: /v1\r\n          method: get\r\n  v2Description:\r\n    handler: handler.v2_description\r\n    events:\r\n      - httpApi:\r\n          path: /v2\r\n          method: get\r\n  analyze_image_v1:\r\n    handler: handler.analyze_image_v1\r\n    events:\r\n      - httpApi:\r\n          path: /v1/vision\r\n          method: post\r\n  analyze_image_v2:\r\n    handler: handler.analyze_image_v2\r\n    events:\r\n      - httpApi:\r\n          path: /v2/vision\r\n          method: post\r\n",
+    "serviceRawFile": "service: vision\r\nframeworkVersion: '4.1.16'\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-east-1\r\n  iamRoleStatements:\r\n    - Effect: \"Allow\"\r\n      Action:\r\n        - \"rekognition:DetectFaces\"\r\n        - \"rekognition:DetectLabels\"\r\n        - \"logs:*\"\r\n        - \"s3:GetObject\"\r\n        - \"bedrock:InvokeModel\"  \r\n      Resource: \"*\"\r\n\r\nfunctions:\r\n  health:\r\n    handler: handler.health\r\n    events:\r\n      - httpApi:\r\n          path: /\r\n          method: get\r\n  v1Description:\r\n    handler: handler.v1_description\r\n    events:\r\n      - httpApi:\r\n          path: /v1\r\n          method: get\r\n  v2Description:\r\n    handler: handler.v2_description\r\n    events:\r\n      - httpApi:\r\n          path: /v2\r\n          method: get\r\n  analyze_image_v1:\r\n    handler: handler.analyze_image_v1\r\n    events:\r\n      - httpApi:\r\n          path: /v1/vision\r\n          method: post\r\n  analyze_image_v2:\r\n    handler: handler.analyze_image_v2\r\n    events:\r\n      - httpApi:\r\n          path: /v2/vision\r\n          method: post\r\n",
     "command": [
       "deploy"
     ],
     "options": {},
     "error": null,
     "params": {},
-    "machineId": "c433debb4cd828013d70d0bad41f3789",
+    "machineId": "720dc65960cc546dba0967556b489446",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
     "orgId": "c3a15f3f-c3c8-4ce8-820c-8c2826a65f21",
@@ -1100,36 +1102,36 @@
     "serviceProviderAwsCfStackName": "vision-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:767398027208:stack/vision-dev/1da60f70-4a86-11ef-9366-0affe452a9b5",
     "serviceProviderAwsCfStackCreated": "2024-07-25T13:02:15.589Z",
-    "serviceProviderAwsCfStackUpdated": "2024-07-27T18:49:19.104Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-28T13:08:49.960Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v1:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v1:3",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v2:4",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v2:5",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "V1DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v1Description:7",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v1Description:8",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "V2DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v2Description:6",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v2Description:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "HealthLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-health:7",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-health:8",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
       },
