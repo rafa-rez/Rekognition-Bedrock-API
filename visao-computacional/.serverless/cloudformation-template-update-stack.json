@@ -197,9 +197,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
         },
-        "Handler": "handler.health",
+        "Handler": "handlers/health.health",
         "Runtime": "python3.9",
         "FunctionName": "vision-dev-health",
         "MemorySize": 1024,
@@ -222,9 +222,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
         },
-        "Handler": "handler.v1_description",
+        "Handler": "handlers/descriptions.v1_description",
         "Runtime": "python3.9",
         "FunctionName": "vision-dev-v1Description",
         "MemorySize": 1024,
@@ -247,9 +247,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
         },
-        "Handler": "handler.v2_description",
+        "Handler": "handlers/descriptions.v2_description",
         "Runtime": "python3.9",
         "FunctionName": "vision-dev-v2Description",
         "MemorySize": 1024,
@@ -272,9 +272,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
         },
-        "Handler": "handler.analyze_image_v1",
+        "Handler": "handlers/analyzeV1.analyze_image_v1",
         "Runtime": "python3.9",
         "FunctionName": "vision-dev-analyze_image_v1",
         "MemorySize": 1024,
@@ -297,9 +297,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722172121808-2024-07-28T13:08:41.808Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
         },
-        "Handler": "handler.analyze_image_v2",
+        "Handler": "handlers/analyzeV2.analyze_image_v2",
         "Runtime": "python3.9",
         "FunctionName": "vision-dev-analyze_image_v2",
         "MemorySize": 1024,
@@ -315,54 +315,54 @@
         "AnalyzeUnderscoreimageUnderscorev2LogGroup"
       ]
     },
-    "HealthLambdaVersionoUIxWtiqAz5UKUeEcwOa56lcAzN6IfR2ZxxNQxp4U": {
+    "HealthLambdaVersionKSEBhoDCjjiyJLcJSoIHRJ5MvXzLRVVcFu7IvNJzIs": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HealthLambdaFunction"
         },
-        "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
+        "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
       }
     },
-    "V1DescriptionLambdaVersionlmn8MhJ0qmdLz7fH9ST1vtoiPpKGhgVCcGaM9SwQ": {
+    "V1DescriptionLambdaVersionPNIHEryXP1cVJXPZE5sqL1RmpOhhRyTZkWLFXCmTms": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "V1DescriptionLambdaFunction"
         },
-        "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
+        "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
       }
     },
-    "V2DescriptionLambdaVersionqBZ368lvruCRn3PfoTYPGRvxlu8LDsXo0loVumpmY": {
+    "V2DescriptionLambdaVersionVU2waWPDwxJGkwmEd0yul2DxLrj4YRYKAtDF2aOo30": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "V2DescriptionLambdaFunction"
         },
-        "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
+        "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
       }
     },
-    "AnalyzeUnderscoreimageUnderscorev1LambdaVersionL9NH1JYqzAlYdMJtLZsIBlwcOzgH22Fv0qr7k9RoI": {
+    "AnalyzeUnderscoreimageUnderscorev1LambdaVersionswQcDlW8msjzB01ke3iMDmE5ilUEyTL13rjzTUko8E": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaFunction"
         },
-        "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
+        "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
       }
     },
-    "AnalyzeUnderscoreimageUnderscorev2LambdaVersionNU24pluSxJhpm8LSZgmFquM5PheJP1VfkQLEGlThu8": {
+    "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaFunction"
         },
-        "CodeSha256": "KmVYaSlS+yKVWngsTyOXy1lnts7gC2zweGXzSW9MdhU="
+        "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
       }
     },
     "HttpApi": {
@@ -773,7 +773,7 @@
     "HealthLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HealthLambdaVersionoUIxWtiqAz5UKUeEcwOa56lcAzN6IfR2ZxxNQxp4U"
+        "Ref": "HealthLambdaVersionKSEBhoDCjjiyJLcJSoIHRJ5MvXzLRVVcFu7IvNJzIs"
       },
       "Export": {
         "Name": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
@@ -782,7 +782,7 @@
     "V1DescriptionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "V1DescriptionLambdaVersionlmn8MhJ0qmdLz7fH9ST1vtoiPpKGhgVCcGaM9SwQ"
+        "Ref": "V1DescriptionLambdaVersionPNIHEryXP1cVJXPZE5sqL1RmpOhhRyTZkWLFXCmTms"
       },
       "Export": {
         "Name": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
@@ -791,7 +791,7 @@
     "V2DescriptionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "V2DescriptionLambdaVersionqBZ368lvruCRn3PfoTYPGRvxlu8LDsXo0loVumpmY"
+        "Ref": "V2DescriptionLambdaVersionVU2waWPDwxJGkwmEd0yul2DxLrj4YRYKAtDF2aOo30"
       },
       "Export": {
         "Name": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
@@ -800,7 +800,7 @@
     "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaVersionL9NH1JYqzAlYdMJtLZsIBlwcOzgH22Fv0qr7k9RoI"
+        "Ref": "AnalyzeUnderscoreimageUnderscorev1LambdaVersionswQcDlW8msjzB01ke3iMDmE5ilUEyTL13rjzTUko8E"
       },
       "Export": {
         "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
@@ -809,7 +809,7 @@
     "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersionNU24pluSxJhpm8LSZgmFquM5PheJP1VfkQLEGlThu8"
+        "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4"
       },
       "Export": {
         "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"

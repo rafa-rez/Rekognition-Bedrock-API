@@ -17,31 +17,31 @@ provider:
 
 functions:
   health:
-    handler: handler.health
+    handler: handlers/health.health
     events:
       - httpApi:
           path: /
           method: get
   v1Description:
-    handler: handler.v1_description
+    handler: handlers/descriptions.v1_description
     events:
       - httpApi:
           path: /v1
           method: get
   v2Description:
-    handler: handler.v2_description
+    handler: handlers/descriptions.v2_description
     events:
       - httpApi:
           path: /v2
           method: get
   analyze_image_v1:
-    handler: handler.analyze_image_v1
+    handler: handlers/analyzeV1.analyze_image_v1
     events:
       - httpApi:
           path: /v1/vision
           method: post
   analyze_image_v2:
-    handler: handler.analyze_image_v2
+    handler: handlers/analyzeV2.analyze_image_v2
     events:
       - httpApi:
           path: /v2/vision
