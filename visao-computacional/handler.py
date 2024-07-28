@@ -4,6 +4,7 @@ import datetime
 
 rekognition = boto3.client('rekognition')
 s3 = boto3.client('s3')
+bedrock = boto3.client('bedrock-runtime')
 
 def health(event, context):
     return {
@@ -96,7 +97,7 @@ def analyze_image_v2(event, context):
             MinConfidence=75
         )
 
-        print(json.dumps(response))  # Logando a resposta
+        print("Rekognition Response:", json.dumps(response))  # Logando a resposta
 
         labels = response['Labels']
         pets = [label for label in labels if label['Name'] in ['Animal', 'Dog', 'Pet', 'Cat', 'Labrador']]
@@ -106,11 +107,16 @@ def analyze_image_v2(event, context):
             'labels': [{'Name': label['Name'], 'Confidence': label['Confidence']} for label in pets],
         }]
 
+        # Gerar dica usando Amazon Bedrock
+        #tips = generate_pet_tips(pets) Definir essa função
+        #print("Generated Tips:", tips)
+
         response_body = {
             'url_to_image': url_to_image,
             'created_image': datetime.datetime.now().strftime('%d-%m-%Y %H:%M:%S'),
             'pets': result_pets if pets else None,
-            'faces': faces if faces else None
+            'faces': faces if faces else None,
+            'tips': tips if tips else "No tips available"
         }
 
         return {
@@ -119,8 +125,9 @@ def analyze_image_v2(event, context):
         }
 
     except Exception as e:
-        print(e)
+        print("Error:", e)
         return {
             'statusCode': 500,
             'body': json.dumps({'error': str(e)})
         }
+
