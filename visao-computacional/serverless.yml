@@ -42,6 +42,7 @@ functions:
           method: post
   analyze_image_v2:
     handler: handlers/analyzeV2.analyze_image_v2
+    timeout: 30
     events:
       - httpApi:
           path: /v2/vision

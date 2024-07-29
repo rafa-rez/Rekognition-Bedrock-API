@@ -214,7 +214,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
               },
               "Handler": "handlers/health.health",
               "Runtime": "python3.9",
@@ -239,7 +239,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
               },
               "Handler": "handlers/descriptions.v1_description",
               "Runtime": "python3.9",
@@ -264,7 +264,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
               },
               "Handler": "handlers/descriptions.v2_description",
               "Runtime": "python3.9",
@@ -289,7 +289,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
               },
               "Handler": "handlers/analyzeV1.analyze_image_v1",
               "Runtime": "python3.9",
@@ -314,13 +314,13 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
               },
               "Handler": "handlers/analyzeV2.analyze_image_v2",
               "Runtime": "python3.9",
               "FunctionName": "vision-dev-analyze_image_v2",
               "MemorySize": 1024,
-              "Timeout": 6,
+              "Timeout": 30,
               "Role": {
                 "Fn::GetAtt": [
                   "IamRoleLambdaExecution",
@@ -372,7 +372,7 @@
               "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
             }
           },
-          "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4": {
+          "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
@@ -811,7 +811,7 @@
           "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4"
+              "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU"
             },
             "Export": {
               "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
@@ -1021,6 +1021,7 @@
       },
       "analyze_image_v2": {
         "handler": "handlers/analyzeV2.analyze_image_v2",
+        "timeout": 30,
         "events": [
           {
             "httpApi": {
@@ -1034,10 +1035,9 @@
         "name": "vision-dev-analyze_image_v2",
         "package": {},
         "memory": 1024,
-        "timeout": 6,
         "runtime": "python3.9",
         "vpc": {},
-        "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4"
+        "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU"
       }
     },
     "configValidationMode": "warn",
@@ -1055,10 +1055,10 @@
     "appId": null,
     "orgId": null,
     "layers": {},
-    "artifact": "E:\\ComputerScience\\Compass\\ProjetoSprint8\\sprint-8-pb-aws-abril\\visao-computacional\\.serverless\\vision.zip"
+    "artifact": "C:\\Users\\Rafae\\OneDrive\\Desktop\\Sprints\\Sprint-8\\sprint-8-pb-aws-abril\\visao-computacional\\.serverless\\vision.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z",
+    "artifactDirectoryName": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z",
     "artifact": "vision.zip"
   }
 }

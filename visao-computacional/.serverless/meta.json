@@ -1,13 +1,13 @@
 {
-  "E:\\ComputerScience\\Compass\\ProjetoSprint8\\sprint-8-pb-aws-abril\\visao-computacional": {
+  "C:\\Users\\Rafae\\OneDrive\\Desktop\\Sprints\\Sprint-8\\sprint-8-pb-aws-abril\\visao-computacional": {
     "versionSfCore": null,
-    "versionFramework": "4.1.16",
+    "versionFramework": "4.1.17",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
     "composeResolverProviders": {},
     "composeServiceName": null,
-    "servicePath": "E:\\ComputerScience\\Compass\\ProjetoSprint8\\sprint-8-pb-aws-abril\\visao-computacional",
+    "servicePath": "C:\\Users\\Rafae\\OneDrive\\Desktop\\Sprints\\Sprint-8\\sprint-8-pb-aws-abril\\visao-computacional",
     "serviceConfigFileName": "serverless.yml",
     "service": {
       "service": "vision",
@@ -230,7 +230,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
                 },
                 "Handler": "handlers/health.health",
                 "Runtime": "python3.9",
@@ -255,7 +255,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
                 },
                 "Handler": "handlers/descriptions.v1_description",
                 "Runtime": "python3.9",
@@ -280,7 +280,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
                 },
                 "Handler": "handlers/descriptions.v2_description",
                 "Runtime": "python3.9",
@@ -305,7 +305,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
                 },
                 "Handler": "handlers/analyzeV1.analyze_image_v1",
                 "Runtime": "python3.9",
@@ -330,13 +330,13 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722191770684-2024-07-28T18:36:10.684Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1722283748215-2024-07-29T20:09:08.215Z/vision.zip"
                 },
                 "Handler": "handlers/analyzeV2.analyze_image_v2",
                 "Runtime": "python3.9",
                 "FunctionName": "vision-dev-analyze_image_v2",
                 "MemorySize": 1024,
-                "Timeout": 6,
+                "Timeout": 30,
                 "Role": {
                   "Fn::GetAtt": [
                     "IamRoleLambdaExecution",
@@ -388,7 +388,7 @@
                 "CodeSha256": "Fp5yzCBaqQUSgnsTFQka/gH6tktYvOf7FvWmxdBaGaM="
               }
             },
-            "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4": {
+            "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
@@ -842,7 +842,7 @@
             "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4"
+                "Ref": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU"
               },
               "Export": {
                 "Name": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
@@ -1051,6 +1051,7 @@
         },
         "analyze_image_v2": {
           "handler": "handlers/analyzeV2.analyze_image_v2",
+          "timeout": 30,
           "events": [
             {
               "httpApi": {
@@ -1064,26 +1065,25 @@
           "name": "vision-dev-analyze_image_v2",
           "package": {},
           "memory": 1024,
-          "timeout": 6,
           "runtime": "python3.9",
           "vpc": {},
-          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion2XczV57HzoznKiu593A7G5MGdBCHQKg1WKbkgpkf4"
+          "versionLogicalId": "AnalyzeUnderscoreimageUnderscorev2LambdaVersion0U2F0TwkrsqkvjheKDWh9oKkMfNRhoQrHD8sPYqhkU"
         }
       }
     },
-    "serviceRawFile": "service: vision\r\nframeworkVersion: '4.1.16'\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-east-1\r\n  iamRoleStatements:\r\n    - Effect: \"Allow\"\r\n      Action:\r\n        - \"rekognition:DetectFaces\"\r\n        - \"rekognition:DetectLabels\"\r\n        - \"logs:*\"\r\n        - \"s3:GetObject\"\r\n        - \"bedrock:InvokeModel\"  \r\n      Resource: \"*\"\r\n\r\nfunctions:\r\n  health:\r\n    handler: handlers/health.health\r\n    events:\r\n      - httpApi:\r\n          path: /\r\n          method: get\r\n  v1Description:\r\n    handler: handlers/descriptions.v1_description\r\n    events:\r\n      - httpApi:\r\n          path: /v1\r\n          method: get\r\n  v2Description:\r\n    handler: handlers/descriptions.v2_description\r\n    events:\r\n      - httpApi:\r\n          path: /v2\r\n          method: get\r\n  analyze_image_v1:\r\n    handler: handlers/analyzeV1.analyze_image_v1\r\n    events:\r\n      - httpApi:\r\n          path: /v1/vision\r\n          method: post\r\n  analyze_image_v2:\r\n    handler: handlers/analyzeV2.analyze_image_v2\r\n    events:\r\n      - httpApi:\r\n          path: /v2/vision\r\n          method: post\r\n",
+    "serviceRawFile": "service: vision\r\nframeworkVersion: '4.1.16'\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.9\r\n  region: us-east-1\r\n  iamRoleStatements:\r\n    - Effect: \"Allow\"\r\n      Action:\r\n        - \"rekognition:DetectFaces\"\r\n        - \"rekognition:DetectLabels\"\r\n        - \"logs:*\"\r\n        - \"s3:GetObject\"\r\n        - \"bedrock:InvokeModel\"  \r\n      Resource: \"*\"\r\n\r\nfunctions:\r\n  health:\r\n    handler: handlers/health.health\r\n    events:\r\n      - httpApi:\r\n          path: /\r\n          method: get\r\n  v1Description:\r\n    handler: handlers/descriptions.v1_description\r\n    events:\r\n      - httpApi:\r\n          path: /v1\r\n          method: get\r\n  v2Description:\r\n    handler: handlers/descriptions.v2_description\r\n    events:\r\n      - httpApi:\r\n          path: /v2\r\n          method: get\r\n  analyze_image_v1:\r\n    handler: handlers/analyzeV1.analyze_image_v1\r\n    events:\r\n      - httpApi:\r\n          path: /v1/vision\r\n          method: post\r\n  analyze_image_v2:\r\n    handler: handlers/analyzeV2.analyze_image_v2\r\n    timeout: 30\r\n    events:\r\n      - httpApi:\r\n          path: /v2/vision\r\n          method: post\r\n",
     "command": [
       "deploy"
     ],
     "options": {},
     "error": null,
     "params": {},
-    "machineId": "e9f5a6b46755d18c8634bb1f60ac201a",
+    "machineId": "20c5836afbbc53b0ad89c13b8b9192ea",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
-    "orgId": "28cc9eaa-1dc8-4856-927c-0ae91f5abfe7",
-    "orgName": "josejaan",
-    "userId": "qHXQHJwM9XWrDpsZ3s",
+    "orgId": "c3a15f3f-c3c8-4ce8-820c-8c2826a65f21",
+    "orgName": "rafarez",
+    "userId": "S3Y9FSPhJDQlWv8knM",
     "dashboard": {
       "isEnabledForService": false,
       "requiredAuthentication": false,
@@ -1093,62 +1093,62 @@
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "userName": "josejaan",
+    "userName": "rafarez",
     "subscription": null,
-    "userEmail": "joseacerbialmeidaneto@hotmail.com",
+    "userEmail": "rafaelrez2004@gmail.com",
     "serviceProviderAwsCredentials": "<REDACTED>",
-    "serviceProviderAwsAccountId": "891377158070",
-    "versionSf": "4.1.16",
+    "serviceProviderAwsAccountId": "767398027208",
+    "versionSf": "4.1.17",
     "serviceProviderAwsCfStackName": "vision-dev",
-    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:891377158070:stack/vision-dev/7b28ea50-4c48-11ef-85b7-12a6a9bda809",
-    "serviceProviderAwsCfStackCreated": "2024-07-27T18:46:06.081Z",
-    "serviceProviderAwsCfStackUpdated": "2024-07-28T18:36:18.088Z",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:767398027208:stack/vision-dev/1da60f70-4a86-11ef-9366-0affe452a9b5",
+    "serviceProviderAwsCfStackCreated": "2024-07-25T13:02:15.589Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-29T20:09:25.090Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:891377158070:function:vision-dev-analyze_image_v1:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v1:4",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:891377158070:function:vision-dev-analyze_image_v2:3",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v2:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "V1DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:891377158070:function:vision-dev-v1Description:3",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v1Description:9",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "V2DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:891377158070:function:vision-dev-v2Description:3",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v2Description:8",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "HealthLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:891377158070:function:vision-dev-health:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-health:9",
         "Description": "Current Lambda function version",
         "ExportName": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "HttpApiId",
-        "OutputValue": "z6mhxez9de",
+        "OutputValue": "9f69606sq1",
         "Description": "Id of the HTTP API",
         "ExportName": "sls-vision-dev-HttpApiId"
       },
       {
         "OutputKey": "ServerlessDeploymentBucketName",
-        "OutputValue": "vision-dev-serverlessdeploymentbucket-tgald08sioli",
+        "OutputValue": "vision-dev-serverlessdeploymentbucket-88ukfrxvx56h",
         "ExportName": "sls-vision-dev-ServerlessDeploymentBucketName"
       },
       {
         "OutputKey": "HttpApiUrl",
-        "OutputValue": "https://z6mhxez9de.execute-api.us-east-1.amazonaws.com",
+        "OutputValue": "https://9f69606sq1.execute-api.us-east-1.amazonaws.com",
         "Description": "URL of the HTTP API",
         "ExportName": "sls-vision-dev-HttpApiUrl"
       }
