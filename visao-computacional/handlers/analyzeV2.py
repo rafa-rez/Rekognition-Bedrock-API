@@ -21,7 +21,7 @@ def analyze_image_v2(event, context):
         print("Rekognition Response:", json.dumps(response))
 
         labels = response['Labels']
-        pets = [label for label in labels if label['Name'] in ['Animal', 'Dog', 'Pet', 'Cat', 'Labrador']]
+        pets = [label for label in labels if label['Name'] in ['Dog', 'Cat', 'Fish', 'Feline', 'Canine']]
         faces = [label for label in labels if label['Name'] == 'Person']
 
         result_pets = [{

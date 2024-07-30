@@ -18,9 +18,6 @@
 ## 📖 Descrição do Projeto
 
 ## 📂 Estrutura de pastas
- 
-```bash
-```
 
 
 ## 🏗️ Arquitetura AWS
@@ -30,8 +27,47 @@
 
 ## 🚀 Como usar o sistema
 
-## 🏆 Experiências obtidas
+## ✍️ Exemplos de Requesições
 
+    - V1:
+        - 
+    - V2:
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "bird.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "cat.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "dog.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "fish.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "forest.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "wolf.jpg"
+            }
+
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "doghuman.jpg"
+            }
+
+## 🏆 Experiências obtidas
 
 ## 💻 Tecnologias utilizadas
 
