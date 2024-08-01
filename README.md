@@ -18,6 +18,30 @@
 ## 📖 Descrição do Projeto
 
 ## 📂 Estrutura de pastas
+```
+├── assets
+├── visao-computacional
+│   ├── .serverless
+│   │    ├── cloudformation-template-create-stack.json
+│   │    ├── cloudformation-template-update-stack.json
+│   │    ├── meta.json
+│   │    ├── serverless-state.json
+│   │    └── vizions.zip
+│   │
+│   ├── handlers
+│   │    ├── analyzeV1.py
+│   │    ├── analyzeV2.py
+│   │    ├── descriptions.py
+│   │    ├── health.py
+│   │    └── utils.py
+│   │         
+│   ├── gitignore.txt
+│   └── serverless.yml     
+│                   
+├── .gitignore                      
+└── README.MD                        
+                                           
+```
 
 
 ## 🏗️ Arquitetura AWS
