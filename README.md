@@ -16,10 +16,10 @@
 
 
 ## 📖 Descrição do Projeto
-Este projeto, relizado na Sprint 8 do programa de bolsa Machine Learning com AWS da CompassUOL, tem como finalidade criar APIs com a capacidade de:
-- Classificar a emoção principal de faces humanas usando o serviço de reconhecimento de imagem [Amazon Rekognition](https://aws.amazon.com/pt/rekognition/)
-- Detectar de pets na imagem
-- Gerar com o [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/?icmpid=docs_homepage_ml), dicas como necessidade de exercícios, comportamento, cuidados, baseadas na espécie do animal
+Este projeto, relizado na Sprint 8 do programa de bolsas da CompassUOL, tem como finalidade criar APIs com a capacidade de:
+- Classificar a emoção principal de faces humanas em imagens usando o serviço de reconhecimento de imagem [Amazon Rekognition](https://aws.amazon.com/pt/rekognition/)
+- Detectar pets na imagem
+- Gerar com o [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/?icmpid=docs_homepage_ml), dicas de quantidade de exercícios, temperamento, comportamento, cuidados, baseadas na espécie do animal
 
 ## 📂 Estrutura de pastas
 ```
