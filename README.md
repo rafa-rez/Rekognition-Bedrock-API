@@ -97,9 +97,8 @@ functions:
 ```
 ### Teste a solução
 **Observação**: Crie um bucket no S3 e faça o upload da imagem que deseja extrair informações.
-
-1 - Escolha um serviço de testes de API (Postman, ThunderClient, Insomnia) 
-2 - Selecione o método POST para o Endpoint desejado e envie a requisição
+- 1. Escolha um serviço de testes de API (Postman, ThunderClient, Insomnia)
+- 2. Selecione o método POST para o Endpoint desejado e envie a requisição
 ```json 
 { 
    "bucket": "myphotos", 
@@ -108,6 +107,7 @@ functions:
 ``` 
 
 Você terá uma resposta no seguinte formato:
+
 ![image](https://github.com/user-attachments/assets/1c19fb52-6f88-46ca-9a70-6a750bab1214)
 
 
