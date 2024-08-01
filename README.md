@@ -55,11 +55,10 @@ Este projeto, relizado na Sprint 8 do programa de bolsas da CompassUOL, tem como
 
 ## 🚀 Como usar o sistema
 
-## ✍️ Exemplos de Requesições
+## ✍️ Exemplos de Requisições
 
-    - V1:
-        - 
-    - V2:
+    - Rotas V1 e V2
+    
          - {
              "bucket": "sprint-8-images",
             "imageName": "bird.jpg"
