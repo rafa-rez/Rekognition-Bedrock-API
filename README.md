@@ -67,6 +67,10 @@ aws configure
 ```
 https://github.com/Compass-pb-aws-2024-ABRIL/sprint-8-pb-aws-abril.git
 ```
+### Navegue até a branch desejada
+```
+git checkout grupo-4
+```
 ### Navegue até a pasta onde encontra-se o arquivo serverless.yml
 ```
 cd sprint-8-pb-aws-abril.git/visao-computacional
@@ -114,7 +118,23 @@ Você terá uma resposta no seguinte formato:
 
 ## ✍️ Exemplos de Requisições
 
-    - Rotas V1 e V2
+    - Rota V1
+         - {
+             "bucket": "sprint-8-images",
+            "imageName": "human_1.jpg"
+            }
+
+        - {
+             "bucket": "sprint-8-images",
+            "imageName": "human_2.jpg"
+            }
+
+        - {
+             "bucket": "sprint-8-images",
+            "imageName": "human_3.jpg"
+            }
+
+    - Rota V2
     
          - {
              "bucket": "sprint-8-images",

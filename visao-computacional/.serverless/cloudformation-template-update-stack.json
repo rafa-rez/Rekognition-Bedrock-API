@@ -197,7 +197,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722379948864-2024-07-30T22:52:28.864Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
         },
         "Handler": "handlers/health.health",
         "Runtime": "python3.9",
@@ -222,7 +222,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722379948864-2024-07-30T22:52:28.864Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
         },
         "Handler": "handlers/descriptions.v1_description",
         "Runtime": "python3.9",
@@ -247,7 +247,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722379948864-2024-07-30T22:52:28.864Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
         },
         "Handler": "handlers/descriptions.v2_description",
         "Runtime": "python3.9",
@@ -272,7 +272,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722379948864-2024-07-30T22:52:28.864Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
         },
         "Handler": "handlers/analyzeV1.analyze_image_v1",
         "Runtime": "python3.9",
@@ -297,7 +297,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/vision/dev/1722379948864-2024-07-30T22:52:28.864Z/vision.zip"
+          "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
         },
         "Handler": "handlers/analyzeV2.analyze_image_v2",
         "Runtime": "python3.9",
