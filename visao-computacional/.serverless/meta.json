@@ -1,7 +1,7 @@
 {
   "C:\\Users\\Rafae\\OneDrive\\Desktop\\Sprints\\Sprint-8\\sprint-8-pb-aws-abril\\visao-computacional": {
     "versionSfCore": null,
-    "versionFramework": "4.1.18",
+    "versionFramework": "4.1.19",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
@@ -230,7 +230,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                        "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                       },
                       "Handler": "handlers/health.health",
                       "Runtime": "python3.9",
@@ -255,7 +255,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                        "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                       },
                       "Handler": "handlers/descriptions.v1_description",
                       "Runtime": "python3.9",
@@ -280,7 +280,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                        "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                       },
                       "Handler": "handlers/descriptions.v2_description",
                       "Runtime": "python3.9",
@@ -305,7 +305,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                        "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                       },
                       "Handler": "handlers/analyzeV1.analyze_image_v1",
                       "Runtime": "python3.9",
@@ -330,7 +330,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                        "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                       },
                       "Handler": "handlers/analyzeV2.analyze_image_v2",
                       "Runtime": "python3.9",
@@ -1307,7 +1307,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                 },
                 "Handler": "handlers/health.health",
                 "Runtime": "python3.9",
@@ -1332,7 +1332,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                 },
                 "Handler": "handlers/descriptions.v1_description",
                 "Runtime": "python3.9",
@@ -1357,7 +1357,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                 },
                 "Handler": "handlers/descriptions.v2_description",
                 "Runtime": "python3.9",
@@ -1382,7 +1382,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                 },
                 "Handler": "handlers/analyzeV1.analyze_image_v1",
                 "Runtime": "python3.9",
@@ -1407,7 +1407,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/vision/dev/1722466086572-2024-07-31T22:48:06.572Z/vision.zip"
+                  "S3Key": "serverless/vision/dev/1723144948834-2024-08-08T19:22:28.834Z/vision.zip"
                 },
                 "Handler": "handlers/analyzeV2.analyze_image_v2",
                 "Runtime": "python3.9",
@@ -2153,9 +2153,12 @@
       "deploy"
     ],
     "options": {},
-    "error": null,
+    "error": {
+      "message": "The security token included in the request is invalid",
+      "stack": "InvalidClientTokenId: The security token included in the request is invalid\n    at throwDefaultError (file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:88:7944)\n    at file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:88:8218\n    at de_CommandError (file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:113:39580)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:77:24670\n    at async file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:78:11491\n    at async file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:88:26572\n    at async file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:76:20261\n    at async resolveAccountId (file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:117:909861)\n    at async getAwsCredentialIdentityProvider (file:///C:/Users/Rafae/.serverless/releases/4.1.19/package/dist/sf-core.js:179:455864)"
+    },
     "params": {},
-    "machineId": "c433debb4cd828013d70d0bad41f3789",
+    "machineId": "20c5836afbbc53b0ad89c13b8b9192ea",
     "accessKeyV2": "<REDACTED>",
     "accessKeyV1": "<REDACTED>",
     "orgId": "c3a15f3f-c3c8-4ce8-820c-8c2826a65f21",
@@ -2173,62 +2176,12 @@
     "userName": "rafarez",
     "subscription": null,
     "userEmail": "rafaelrez2004@gmail.com",
-    "serviceProviderAwsCredentials": "<REDACTED>",
-    "serviceProviderAwsAccountId": "767398027208",
-    "versionSf": "4.1.18",
+    "versionSf": "4.1.19",
     "serviceProviderAwsCfStackName": "vision-dev",
-    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:767398027208:stack/vision-dev/1da60f70-4a86-11ef-9366-0affe452a9b5",
-    "serviceProviderAwsCfStackCreated": "2024-07-25T13:02:15.589Z",
-    "serviceProviderAwsCfStackUpdated": "2024-07-30T22:52:36.158Z",
-    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
-    "serviceProviderAwsCfStackOutputs": [
-      {
-        "OutputKey": "AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v1:8",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev1LambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-analyze_image_v2:11",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-vision-dev-AnalyzeUnderscoreimageUnderscorev2LambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "V1DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v1Description:13",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-vision-dev-V1DescriptionLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "V2DescriptionLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-v2Description:12",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-vision-dev-V2DescriptionLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "HealthLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:767398027208:function:vision-dev-health:13",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-vision-dev-HealthLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "HttpApiId",
-        "OutputValue": "9f69606sq1",
-        "Description": "Id of the HTTP API",
-        "ExportName": "sls-vision-dev-HttpApiId"
-      },
-      {
-        "OutputKey": "ServerlessDeploymentBucketName",
-        "OutputValue": "vision-dev-serverlessdeploymentbucket-88ukfrxvx56h",
-        "ExportName": "sls-vision-dev-ServerlessDeploymentBucketName"
-      },
-      {
-        "OutputKey": "HttpApiUrl",
-        "OutputValue": "https://9f69606sq1.execute-api.us-east-1.amazonaws.com",
-        "Description": "URL of the HTTP API",
-        "ExportName": "sls-vision-dev-HttpApiUrl"
-      }
-    ]
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
   }
 }

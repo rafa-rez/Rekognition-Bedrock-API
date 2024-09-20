@@ -1,8 +1,3 @@
-<h1 align="center">Compass Uol - Faces classification</h1>
-
-![Logo](https://s3.sa-east-1.amazonaws.com/remotar-assets-prod/company-profile-covers/cl7god9gt00lx04wg4p2a93zt.jpg)
-
-
 ## 📌 Índice
 - [Descrição do Projeto](#-Descrição-do-Projeto)
 - [Descrição da API](#-Descrição-da-API)
